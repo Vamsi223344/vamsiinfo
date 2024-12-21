@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assign Course to Employees</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+  <style>
+      body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom right, #e6f7ff, #e6ffe6);
+      color: #333;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .form-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .close-btn {
+      float: right;
+    }
+    .employee-list {
+      margin-top: 20px;
+    }
+    .employee-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      background-color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="form-container">
+      <button class="btn btn-secondary close-btn">Close</button>
+      <h2 class="text-center mb-4">Assign Course to Employees</h2>
+      
+      <!-- Course Details Section -->
+      <div class="mb-4">
+        <h4>Course Details</h4>
+        <p><strong>Course Name:</strong> java</p>
+        <p><strong>Description:</strong> basic</p>
+        <p><strong>Concepts:</strong> basic</p>
+        <p><strong>Course Duration:</strong> 2months</p>
+      </div>
+      
+      <!-- Deadline Section -->
+      <div class="mb-3">
+        <label for="deadline" class="form-label"><strong>Deadline</strong></label>
+        <input type="date" id="deadline" class="form-control" placeholder="dd-mm-yyyy">
+      </div>
+      
+      <!-- Assign Course Button -->
+      <button class="btn btn-primary w-100">Assign Course</button>
+      
+      <!-- Employee List Section -->
+      <div class="employee-list mt-4">
+        <div class="employee-item">
+          <span>vamsi (vamsi@gmail.com)</span>
+          <input type="checkbox">
+        </div>
+        <div class="employee-item">
+          <span>ram (ram@gmail.com)</span>
+          <input type="checkbox">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

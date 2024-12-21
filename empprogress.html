@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Progress Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        .chart-container {
+            width: 90%;
+            margin: 0 auto;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        h2 {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>All Employees' Progress</h2>
+    <p><strong>Aggregate Progress (Bar Chart)</strong></p>
+    <div class="chart-container">
+        <canvas id="employeeProgressChart"></canvas>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('employeeProgressChart').getContext('2d');
+        const data = {
+            labels: ['Employee 1', 'Employee 2', 'Employee 3', 'Employee 4', 'Employee 5', 'Employee 6', 'Employee 7', 'Employee 8'],
+            datasets: [
+                {
+                    label: 'Course Progress 1',
+                    backgroundColor: 'rgba(75, 192, 192, 0.7)',
+                    data: [75, 50, 60, 40, 65, 85, 70, 55]
+                },
+                {
+                    label: 'Course Progress 2',
+                    backgroundColor: 'rgba(144, 238, 144, 0.8)',
+                    data: [90, 70, 20, 55, 85, 100, 95, 60]
+                }
+            ]
+        };
+
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Aggregate Progress (Bar Chart)'
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true
+                    },
+                    y: {
+                        beginAtZero: true,
+                        max: 120
+                    }
+                }
+            }
+        };
+
+        const myChart = new Chart(ctx, config);
+    </script>
+</body>
+</html>
